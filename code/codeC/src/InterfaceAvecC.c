@@ -14,7 +14,7 @@
 #include <assert.h>
 #include <string.h>
 #include <math.h>
-#include "../../codeJava/InterfaceAvecC.h"
+#include "InterfaceAvecC.h"
 #include "Graph.h"
 #include "ReducedGraph.h"
 
@@ -56,9 +56,7 @@ Java_InterfaceAvecC_nativeInitGame (JNIEnv * env, jclass cl, jstring spots, jobj
     (*env)->ReleaseStringUTFChars(env, spots, s);
 
     destroyReducedGraph(globRg);
-    printf("is null Graph %d\n", globGraph == NULL);
-    //destroyGraph(globGraph);
-    //printf("is null Graph1 %d\n", globGraph == NULL);
+    destroyGraph(globGraph);
     return event;
 }
 
